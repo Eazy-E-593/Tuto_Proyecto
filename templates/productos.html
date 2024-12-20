@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Área de logo y navegación movida a la izquierda -->
+    <div class="logo-nav-area">
+        <h1>Daira Pilar Styles</h1>
+        <nav>
+            <a href="{{ url_for('inicio') }}">Inicio</a>            
+            <a href="{{ url_for('clientes') }}">Clientes</a>
+            <a href="{{ url_for('ventas') }}">Ventas</a>
+            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        </nav>
+    </div>
+
+    <!-- Sección principal con galería de productos -->
+    <main>
+        <div class="main-container">
+            <section class="product-info">
+                <h2>Catálogo de Productos</h2>
+            </section>
+
+            <section class="product-gallery">
+                <!-- Producto 1 -->
+                <div class="product-item">
+                    <img src="{{ url_for('static', filename='images/producto1.png') }}" alt="Vestido Elegante">
+                    <h3>{{ productos[0][0] }}</h3>
+                    <p>${{ productos[0][1] }}</p>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <img src="{{ url_for('static', filename='images/producto2.png') }}" alt="Camisa Casual">
+                    <h3>{{ productos[1][0] }}</h3>
+                    <p>${{ productos[1][1] }}</p>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-item">
+                    <img src="{{ url_for('static', filename='images/producto3.png') }}" alt="Jeans Modernos">
+                    <h3>{{ productos[2][0] }}</h3>
+                    <p>${{ productos[2][1] }}</p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

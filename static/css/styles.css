@@ -1,0 +1,636 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área de logo y navegación */
+.logo-nav-area {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.logo-nav-area h1 {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-nav-area nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.logo-nav-area nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logo-nav-area nav a:hover {
+    color: #07ba10;
+}
+
+/* Contenedor principal y productos */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+.product-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-info h2 {
+    color: white;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    margin-top: 10px;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.product-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    color: #764ba2;
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.product-item p {
+    color: #667eea;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilos para el formulario de login */
+.login-container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container h2 {
+    color: #764ba2;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+/* Botón con efecto */
+form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 15px;
+    letter-spacing: 4px;
+}
+
+form button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+form button span {
+    position: absolute;
+    display: block;
+}
+
+form button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+form button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+form button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+form button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Mensaje de error */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff3d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    position: relative;
+}
+
+.step:not(:last-child):after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #ffffff3d;
+    right: -40px;
+    top: 50%;
+}
+
+.step.active {
+    background-color: #fff;
+    color: #764ba2;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.step.completed {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Botón de redirección */
+.redirect-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 60%;
+    margin-top: 15px;
+}
+
+.redirect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los fondos */
+.background-user {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.background-admin {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor para el formulario de clientes */
+.form-clientes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.form-clientes-container h2 {
+    margin-bottom: 20px;
+    color: #764ba2;
+    text-align: center;
+}
+
+.form-clientes {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.form-clientes input {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-clientes input:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+.form-clientes button {
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-clientes button:hover {
+    background-color: #667eea;
+}
+
+/* Contenedor de la tabla de clientes */
+.tabla-clientes-container {
+    margin: 20px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.tabla-clientes thead {
+    background-color: #764ba2;
+    color: white;
+}
+
+.tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-clientes th,
+.tabla-clientes td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabla-clientes tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla-clientes tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.tabla-clientes button {
+    padding: 5px 10px;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tabla-clientes button:hover {
+    background-color: #667eea;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .logo-nav-area {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+
+    .logo-nav-area nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-container {
+        margin-top: 30px;
+    }
+
+    .product-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .logo-nav-area nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-info h2 {
+        font-size: 2em;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+}
+
+
+
+/* Agregar esto al archivo CSS existente */
+.form-clientes select {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.form-clientes select:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+/* Estilo para los enlaces de eliminar */
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Ajuste para los enlaces en la tabla */
+.tabla-clientes td a {
+    color: #764ba2;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tabla-clientes td a:not(.btn-delete) {
+    background-color: #764ba2;
+    color: white;
+}
+
+.tabla-clientes td a:not(.btn-delete):hover {
+    background-color: #667eea;
+}
+
+
+
+/* Formulario de registro */
+.register-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.register-container h2 {
+    font-size: 2em;
+    color: #764ba2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-container p {
+    font-size: 1em;
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.register-container form input,
+.register-container form select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.register-container form input:focus,
+.register-container form select:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+.register-container form button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.register-container form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-container .redirect-link {
+    color: #764ba2;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.register-container .redirect-link:hover {
+    color: #03e9f4;
+}

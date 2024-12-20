@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <form action="/login_email" method="POST">
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+
+        <!-- Botón para redirigir a la página de registro -->
+        <div class="form-group">
+            <button onclick="window.location.href='register'" type="button" class="redirect-btn">
+                ¿No tienes una cuenta? Registrate
+            </button>
+        </div>
+        
+        <!-- Si hay algún mensaje de error, se muestra aquí -->
+        <div class="error-message">
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

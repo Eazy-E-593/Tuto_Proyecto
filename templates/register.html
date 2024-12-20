@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Contenedor del formulario de registro -->
+    <div class="register-container">
+        <h2>Crear Cuenta</h2>
+        <p>Por favor completa el formulario para registrarte</p>
+        
+        <form action="/register" method="POST">
+            <!-- Nombre -->
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            
+            <!-- Apellido -->
+            <input type="text" name="apellido" placeholder="Apellido" required>
+            
+            <!-- Correo electrónico -->
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            
+            <!-- Edad -->
+            <input type="number" name="edad" placeholder="Edad" min="1" required>
+            
+            <!-- Ocupación -->
+            <input type="text" name="ocupacion" placeholder="Ocupación" required>
+            
+            <!-- Contraseña -->
+            <input type="password" name="password" placeholder="Contraseña" required>
+            
+            <!-- Botón de registro -->
+            <button type="submit">Registrarse</button>
+        </form>
+        
+        <!-- Enlace para redireccionar al login -->
+        <a href="/login_email" class="redirect-link">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+</body>
+</html>

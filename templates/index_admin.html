@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="background-user" style="background-image: url('/static/images/fondo_admin.png')">
+    <header>
+        <div class="logo-nav-area">
+            <h1>Panel de Administrador, Bienvenida {{ username }} Daira</h1>                
+            <nav>
+                <a href="{{ url_for('productos') }}">Productos</a>
+                <a href="{{ url_for('clientes') }}">Clientes</a>
+                <a href="{{ url_for('ventas') }}">Ventas</a>
+                <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        
+    </main>
+</body>
+</html>

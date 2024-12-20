@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daira Pilar Styles - Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="logo-nav-area">
+        <h1>Daira Pilar Styles</h1>
+        <nav>
+            <a href="{{ url_for('inicio') }}">Inicio</a>
+            <a href="{{ url_for('productos') }}">Productos</a>
+            <a href="{{ url_for('ventas') }}">Ventas</a>
+            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="main-container">
+            <!-- Gestión de Clientes -->
+            <section class="product-info">
+                <h2>Gestión de Clientes</h2>
+            </section>
+
+            <!-- Tabla de Clientes -->
+            <section class="tabla-clientes-container">
+                <table class="tabla-clientes">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cliente in clientes %}
+                        <tr>
+                            <td>{{ cliente[1] }}</td>
+                            <td>{{ cliente[2] }}</td>
+                            <td>{{ cliente[3] }}</td>
+                            <td>
+                                <a href="/editar_cliente/{{ cliente[0] }}">Editar</a>
+                                <a href="/eliminar_cliente/{{ cliente[0] }}" class="btn-delete">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Formulario para Agregar Cliente -->
+            <section class="product-info">
+                <h2>Agregar Cliente</h2>
+            </section>
+            <section class="form-clientes-container">
+                <form class="form-clientes" action="/nuevo_cliente" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <input type="text" name="telefono" placeholder="Teléfono" required>
+                    <button type="submit">Agregar Cliente</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
